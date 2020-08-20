@@ -16,6 +16,8 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    // https://mvnrepository.com/artifact/org.projectlombok/lombok
+    providedCompile group: 'org.projectlombok', name: 'lombok', version: '1.18.12'
     implementation 'com.opencsv:opencsv:4.5'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
