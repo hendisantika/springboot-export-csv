@@ -6,7 +6,6 @@ import com.hendisantika.springbootexportcsv.service.UserService;
 import com.opencsv.CSVWriter;
 import com.opencsv.bean.StatefulBeanToCsv;
 import com.opencsv.bean.StatefulBeanToCsvBuilder;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -31,13 +30,12 @@ import java.util.List;
  * Time: 07:05
  */
 @RestController
-@RequiredArgsConstructor
 public class UserController {
-    private UserService userService;
+    private final UserService userService;
 
-//    public UserController(UserService userService) {
-//        this.userService = userService;
-//    }
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
 
     @GetMapping("/export-users")
     public void exportCSV(HttpServletResponse response) throws Exception {

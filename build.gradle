@@ -21,7 +21,7 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'com.h2database:h2:1.4.200'
+    runtimeOnly 'com.h2database:h2'
     implementation 'com.opencsv:opencsv:5.5.2'
     implementation 'net.sf.supercsv:super-csv:2.4.0'
     compileOnly 'org.projectlombok:lombok'

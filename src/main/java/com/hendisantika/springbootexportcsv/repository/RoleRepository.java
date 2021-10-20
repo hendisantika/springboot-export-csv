@@ -13,4 +13,5 @@ import org.springframework.data.repository.CrudRepository;
  * Time: 07.21
  */
 public interface RoleRepository extends CrudRepository<Role, Integer> {
+    Role findByName(String name);
 }
