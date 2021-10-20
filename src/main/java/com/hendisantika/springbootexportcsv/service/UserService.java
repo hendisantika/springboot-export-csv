@@ -1,6 +1,10 @@
 package com.hendisantika.springbootexportcsv.service;
 
 import com.hendisantika.springbootexportcsv.domain.User;
+import com.hendisantika.springbootexportcsv.domain.User2;
+import com.hendisantika.springbootexportcsv.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -18,6 +22,9 @@ import java.util.List;
 @Service
 public class UserService {
 
+    @Autowired
+    private UserRepository userRepository;
+
     public List<User> listUsers() {
         List<User> users = new ArrayList<>();
 
@@ -27,5 +34,9 @@ public class UserService {
         users.add(new User(3, "Haruno Sakure", "sakura@konohagakure.com", "Japan", 29));
 
         return users;
+    }
+
+    public List<User2> listAll() {
+        return userRepository.findAll(Sort.by("email").ascending());
     }
 }
